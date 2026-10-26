@@ -1,4 +1,4 @@
-"""AnimalCross 0.4 — local Windows control panel, Python standard library only."""
+"""AnimalCross 0.5 — local Windows control panel, Python standard library only."""
 import json
 import os
 import queue
@@ -12,6 +12,7 @@ from pathlib import Path
 from agent import Agent
 from team import Team, ROLES
 from ghost import Ghost
+from services import stop_service
 import tkinter as tk
 from tkinter import ttk, filedialog, messagebox
 
@@ -65,7 +66,7 @@ def workflow_from(value):
 class App(tk.Tk):
     def __init__(self):
         super().__init__()
-        self.title('AnimalCross • lokalne studio AI • 0.4')
+        self.title('AnimalCross • lokalne studio AI • 0.5')
         self.geometry('1100x760')
         self.minsize(850, 600)
         DATA.mkdir(exist_ok=True)
@@ -76,6 +77,8 @@ class App(tk.Tk):
             if not self.cfg.get(key): self.cfg[key] = DEFAULTS[key]
         atomic_json(DATA / 'settings.json', self.cfg)
         self.events = queue.Queue()
+        self.cancel_task = threading.Event()
+        self.stopping_services = False
         self.busy = False
         self.generating = False
         self.messages = []
@@ -94,7 +97,7 @@ class App(tk.Tk):
         style.configure('TButton', padding=8)
         style.configure('TNotebook.Tab', padding=(16, 9))
         ttk.Label(self, text='AnimalCross', font=('Segoe UI', 24, 'bold')).pack(anchor='w', padx=20, pady=(16, 0))
-        ttk.Label(self, text='Lokalne AI • Ollama → ComfyUI • panel testowy 0.4').pack(anchor='w', padx=22, pady=(0, 12))
+        ttk.Label(self, text='Lokalne AI • Ollama → ComfyUI • panel testowy 0.5').pack(anchor='w', padx=22, pady=(0, 12))
         ttk.Label(self, textvariable=self.status, relief='sunken', padding=8, wraplength=800).pack(side='bottom', fill='x', pady=(8, 0))
         tabs = ttk.Notebook(self)
         tabs.pack(fill='both', expand=True, padx=16)
@@ -107,16 +110,23 @@ class App(tk.Tk):
             ttk.Label(card, text=title, width=30, font=('Segoe UI', 12, 'bold')).pack(side='left')
             ttk.Label(card, textvariable=self.service_states[key]).pack(side='left', padx=10)
             if key != 'model':
+                ttk.Button(card, text='Zatrzymaj', command=lambda k=key: self.stop_selected(k)).pack(side='right',padx=4)
                 ttk.Button(card, text='Uruchom', command=lambda k=key: self.start(k)).pack(side='right')
+            else:
+                ttk.Button(card,text='Zwolnij model',command=self.unload).pack(side='right')
         actions = ttk.Frame(services); actions.pack(fill='x', pady=8)
         ttk.Button(actions, text='Uruchom wszystko', style='Accent.TButton', command=self.start).pack(side='left')
         ttk.Button(actions, text='Odśwież statusy', command=self.poll_services).pack(side='left', padx=8)
+        ttk.Button(actions,text='Zatrzymaj usługi',command=lambda: self.stop_selected('all')).pack(side='left',padx=8)
+        ttk.Button(actions,text='Przerwij film',command=self.interrupt_video).pack(side='left')
+        self.components = tk.StringVar(value='Wan / enkoder / VAE: sprawdzam dostępność…')
+        ttk.Label(services,textvariable=self.components,wraplength=950).pack(anchor='w',pady=4)
         details = ttk.Notebook(services); details.pack(fill='both', expand=True)
         logs, memory, settings, video = [ttk.Frame(details, padding=8) for _ in range(4)]
         for frame, title in [(logs, 'Działania AI'), (memory, 'Pamięć AI'), (settings, 'Ustawienia'), (video, 'Zaawansowane')]:
             details.add(frame, text=title)
         stage = ttk.Frame(chat); stage.pack(side='top',fill='x')
-        self.ghost = Ghost(stage, DATA / 'ghost'); self.ghost.pack(side='right')
+        self.ghost = Ghost(stage, BASE / 'Ghost' / 'PNGs' if (BASE / 'Ghost' / 'PNGs').is_dir() else DATA / 'ghost'); self.ghost.pack(side='right')
         self.team_states = {}
         self.stage_label = tk.StringVar(value='Gotowy do pracy • napisz polecenie')
         ttk.Label(stage,textvariable=self.stage_label,font=('Segoe UI',12,'bold'),wraplength=600).pack(anchor='w',pady=6)
@@ -181,6 +191,41 @@ class App(tk.Tk):
         self.after(15000, self.periodic_services)
         self.protocol('WM_DELETE_WINDOW', self.close)
 
+    def task_api(self, *args, **kwargs):
+        if self.cancel_task.is_set(): raise RuntimeError('Zadanie zatrzymane przez użytkownika.')
+        result=api(*args, **kwargs)
+        if self.cancel_task.is_set(): raise RuntimeError('Zadanie zatrzymane przez użytkownika.')
+        return result
+
+    def stop_selected(self, kind):
+        if self.stopping_services: return
+        self.stopping_services = True
+        self.cancel_task.set()
+        self.status.set('Zatrzymuję usługi i dalszą pracę agentów…')
+        cfg=dict(self.cfg)
+        def work():
+            results=[]
+            for key in (('comfy','ollama') if kind=='all' else (kind,)):
+                try:
+                    if key=='comfy':
+                        try: api(cfg[key],'/interrupt',{},timeout=3)
+                        except Exception: pass
+                    result=stop_service(cfg[key],key)
+                    results.append(key+': zakończono PID '+str(result['stopped']))
+                except Exception as exc: results.append(key+': '+str(exc))
+            self.events.put(('service_log','\n'.join(results)))
+            self.events.put(('stop_done','Zakończono próbę zatrzymania. Sprawdź statusy i dziennik.'))
+        threading.Thread(target=work,daemon=True).start()
+
+    def interrupt_video(self):
+        self.cancel_task.set()
+        def work():
+            try:
+                api(self.cfg['comfy'],'/interrupt',{},timeout=5)
+                self.events.put(('service_log','Wysłano przerwanie aktualnego filmu. Oczekujące zadania w kolejce pozostają.'))
+            except Exception as exc: self.events.put(('service_log','Nie udało się przerwać: '+str(exc)))
+        threading.Thread(target=work,daemon=True).start()
+
     def import_ghost(self):
         path=filedialog.askopenfilename(title='Wybierz Ghost PNGTuber Model.zip',filetypes=[('ZIP','*.zip')])
         if not path: return
@@ -229,6 +274,15 @@ class App(tk.Tk):
                 names = [m.get('name', m.get('model')) for m in api(cfg['ollama'], '/api/ps', timeout=3).get('models', [])]
                 result['model'] = '● Załadowany' if cfg['model'] in names else '○ Wczyta się przy rozmowie'
             except Exception: result['model'] = '○ Brak połączenia z Ollama'
+            parts=[]
+            for category, filename, title in [('diffusion_models','wan2.2_ti2v_5B_fp16.safetensors','Wan'),('text_encoders','umt5_xxl_fp8_e4m3fn_scaled.safetensors','Enkoder tekstu'),('vae','wan2.2_vae.safetensors','VAE')]:
+                try:
+                    models=api(cfg['comfy'],'/models/'+category,timeout=3)
+                    parts.append(title+(': dostępny' if filename in models else ': nie znaleziono'))
+                except Exception: parts.append(title+': stan nieznany')
+            parts.append('Ghost: '+('pliki w repozytorium' if (BASE/'Ghost'/'PNGs').is_dir() else 'import lokalny / symbol zastępczy'))
+            parts.append('Python: uruchomiony')
+            result['components']=' • '.join(parts)+'\nWan, enkoder i VAE są modelami ComfyUI, nie osobnymi programami.'
             self.events.put(('service_states', result))
         threading.Thread(target=work, daemon=True).start()
 
@@ -262,8 +316,14 @@ class App(tk.Tk):
                     self.team_states[role].set(role+' • '+names.get(state,state)+' • '+detail[:80])
                     self.stage_label.set(role+' — '+detail[:100])
                     self.ghost.state = 'generating' if 'Generowanie ' in detail else state
+                elif kind == 'stop_done':
+                    self.stopping_services = False
+                    self.status.set(value)
+                    self.poll_services()
                 elif kind == 'service_states':
-                    for key, state in value.items(): self.service_states[key].set(state)
+                    for key, state in value.items():
+                        if key == 'components': self.components.set(state)
+                        else: self.service_states[key].set(state)
                     self.checking_services = False
                 else: self.write(kind, value)
         except queue.Empty: pass
@@ -272,6 +332,8 @@ class App(tk.Tk):
     def run_job(self, description, fn):
         if self.busy:
             messagebox.showinfo('Trwa zadanie', 'Poczekaj na zakończenie bieżącej operacji.'); return
+        if self.stopping_services: return
+        self.cancel_task.clear()
         self.busy = True; self.status.set(description)
         self.send_button.state(['disabled'])
         def worker():
@@ -389,7 +451,7 @@ class App(tk.Tk):
                 q = {}
             if q.get('queue_running') or q.get('queue_pending'):
                 raise RuntimeError('ComfyUI ma aktywną kolejkę. Czat poczeka, aby nie ładować Qwena obok Wan.')
-            agent = Team(api, self.cfg, DATA, lambda kind, value: self.events.put((kind, value)), self.unload_impl)
+            agent = Team(self.task_api, self.cfg, DATA, lambda kind, value: self.events.put((kind, value)), self.unload_impl)
             content = agent.run(history, memory)
             self.messages = history + [{'role': 'assistant', 'content': content}]
             with (DATA / 'chats.jsonl').open('a', encoding='utf-8') as handle:
@@ -431,7 +493,7 @@ class App(tk.Tk):
                     if status.get('completed'):
                         self.events.put(('video_log', 'Wykonanie zakończone. Wyjścia zgłoszone przez ComfyUI:\n' + json.dumps(item.get('outputs', {}), ensure_ascii=False, indent=2)))
                         return
-                time.sleep(2)
+                if self.cancel_task.wait(2): raise RuntimeError('Zadanie przerwane.')
         self.run_job('Wan generuje. Czat jest zablokowany do końca zadania.', work)
 
     def close(self):
