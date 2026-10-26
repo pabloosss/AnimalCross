@@ -1,0 +1,262 @@
+<Config globalScaleX="1" globalScaleY="1" globalPosX="0" globalPosY="0" globalRot="0" statesPassThrough="false" statesHideUnaffected="false" statesIgnoreAxis="false" DisableRotationEffectFix="false">
+    <hotkeys>
+        <hotkey enabled="true" name="Happy" scancode="26" ctrl="false" shift="false" alt="false" axis="-1" btn="-1" jpadID="-1" axisDir="0" mouseButton="-1" timeout="5" useTimeout="false" activeType="0" canTrigger="0" threshold="0.40000001" schedule="false" interval="2" variation="0">
+            <state id="7e953fe4-7f4e-44a1-af5c-cad573f45fa1" state="0"/>
+            <state id="93f7d09a-3f58-45a6-ac13-a00837f50257" state="0"/>
+            <state id="b8e9a9b4-1fad-4fbb-8246-f06860d0545e" state="1"/>
+            <state id="e273d1fc-a500-4676-add0-db3468d0cc56" state="0"/>
+        </hotkey>
+        <hotkey enabled="true" name="Sad" scancode="27" ctrl="false" shift="false" alt="false" axis="-1" btn="-1" jpadID="-1" axisDir="0" mouseButton="-1" timeout="5" useTimeout="false" activeType="0" canTrigger="0" threshold="0.40000001" schedule="false" interval="2" variation="0">
+            <state id="7e953fe4-7f4e-44a1-af5c-cad573f45fa1" state="0"/>
+            <state id="93f7d09a-3f58-45a6-ac13-a00837f50257" state="1"/>
+            <state id="b8e9a9b4-1fad-4fbb-8246-f06860d0545e" state="0"/>
+            <state id="e273d1fc-a500-4676-add0-db3468d0cc56" state="0"/>
+        </hotkey>
+        <hotkey enabled="true" name="Angry" scancode="28" ctrl="false" shift="false" alt="false" axis="-1" btn="-1" jpadID="-1" axisDir="0" mouseButton="-1" timeout="5" useTimeout="false" activeType="0" canTrigger="0" threshold="0.40000001" schedule="false" interval="2" variation="0">
+            <state id="7e953fe4-7f4e-44a1-af5c-cad573f45fa1" state="0"/>
+            <state id="93f7d09a-3f58-45a6-ac13-a00837f50257" state="0"/>
+            <state id="b8e9a9b4-1fad-4fbb-8246-f06860d0545e" state="0"/>
+            <state id="e273d1fc-a500-4676-add0-db3468d0cc56" state="1"/>
+        </hotkey>
+        <hotkey enabled="true" name="Fear" scancode="29" ctrl="false" shift="false" alt="false" axis="-1" btn="-1" jpadID="-1" axisDir="0" mouseButton="-1" timeout="5" useTimeout="false" activeType="0" canTrigger="0" threshold="0.40000001" schedule="false" interval="2" variation="0">
+            <state id="7e953fe4-7f4e-44a1-af5c-cad573f45fa1" state="1"/>
+            <state id="93f7d09a-3f58-45a6-ac13-a00837f50257" state="0"/>
+            <state id="b8e9a9b4-1fad-4fbb-8246-f06860d0545e" state="0"/>
+            <state id="e273d1fc-a500-4676-add0-db3468d0cc56" state="0"/>
+        </hotkey>
+    </hotkeys>
+    <CanvasPresets currentPreset="0">
+        <Preset name="New Preset" scaleX="1" scaleY="1" posX="0" posY="0" rot="0"/>
+    </CanvasPresets>
+    <layers>
+        <layer id="b8e9a9b4-1fad-4fbb-8246-f06860d0545e" name="Happy" visible="true" isFolder="true">
+            <folderContent>
+                <id>1688e335-f589-4b63-ae0b-0577619d22f8</id>
+                <id>2a224159-dbc8-4f5e-a9f0-671309eedfea</id>
+                <id>9e29a78a-9c5a-4dcf-b393-fafa544d4d10</id>
+                <id>6b5233ad-dd9e-47c5-8447-8574c8ba2672</id>
+            </folderContent>
+            <layerColor r="0.1" g="0.40000001" b="0.1" a="1"/>
+        </layer>
+        <layer id="1688e335-f589-4b63-ae0b-0577619d22f8" name="H Face Tracker" visible="true" talking="true" talkThreshold="0.15000001" smoothInput="false" smoothAmount="5" restartOnSwap="false" useBlink="true" talkBlink="false" blinkTime="6" blinkDur="0.2" blinkVar="4" bounceType="1" bounceHeight="80" bounceMoveX="0" bounceRotation="0" bounceScaleX="0" bounceScaleY="0" bounceTime="0.333" breathing="true" breathHeight="30" breathTime="4" breathMoveX="0" breathScaleX="0.1" breathScaleY="0.1" breathCircular="false" breatheWhileTalking="false" breathRotation="0" doBreathTint="false" screaming="false" screamThreshold="0.85000002" screamVibrate="true" screamVibrateAmount="5" screamVibrateSpeed="1" constantHeight="0" constantMoveX="0" constantRotation="0" constantScaleX="1" constantScaleY="1" restartAnimsOnVisible="false" idlePath="" talkPath="" blinkPath="" talkBlinkPath="" screamPath="" syncAnims="false" smoothTalkTint="false" scaleX="1" scaleY="1" posX="0" posY="0" rot="0" pivotX="0.5" pivotY="0.5" rotateChildren="false" motionParent="6b5233ad-dd9e-47c5-8447-8574c8ba2672" motionDelayTime="0" hideWithParent="true" motionDrag="0" motionSpring="0" distanceLimit="-1" rotationEffect="0" inheritTint="false" allowIndividualMotion="false" rotationIgnorePivots="false" motionStretch="0" stretchStrengthX="1" stretchStrengthY="1" stretchMinX="0.5" stretchMinY="0.5" stretchMaxX="2" stretchMaxY="2" weightPosX="0" weightPosY="1" trackingEnabled="true" trackingType="1" followElliptical="false" mouseNeutralX="800" mouseNeutralY="450" mouseAreaX="800" mouseAreaY="450" trackingAxis="0" trackingDeadzone="0" trackingSmooth="0.2" trackingLimitX="30" trackingLimitY="30" untrackedWhenHidden="false" mouseEffect="1" joypadEffect="1" trackingRotLimitX="0" trackingRotLimitY="0" pinLoaded="false" blendMode="Normal" scaleFilter="false" clipID="" isFolder="false" inFolder="b8e9a9b4-1fad-4fbb-8246-f06860d0545e">
+            <folderContent/>
+            <screamTint r="1" g="1" b="1" a="1"/>
+            <talkBlinkTint r="1" g="1" b="1" a="1"/>
+            <blinkTint r="1" g="1" b="1" a="1"/>
+            <talkTint r="1" g="1" b="1" a="1"/>
+            <idleTint r="1" g="1" b="1" a="1"/>
+            <breathTint r="1" g="1" b="1" a="1"/>
+            <layerColor r="0" g="0" b="0" a="0"/>
+        </layer>
+        <layer id="2a224159-dbc8-4f5e-a9f0-671309eedfea" name="H Eyes" visible="true" talking="false" talkThreshold="0.15000001" smoothInput="false" smoothAmount="5" restartOnSwap="false" useBlink="true" talkBlink="false" blinkTime="6" blinkDur="0.2" blinkVar="4" bounceType="1" bounceHeight="80" bounceMoveX="0" bounceRotation="0" bounceScaleX="0" bounceScaleY="0" bounceTime="0.333" breathing="true" breathHeight="30" breathTime="4" breathMoveX="0" breathScaleX="0.1" breathScaleY="0.1" breathCircular="false" breatheWhileTalking="false" breathRotation="0" doBreathTint="false" screaming="false" screamThreshold="0.85000002" screamVibrate="true" screamVibrateAmount="5" screamVibrateSpeed="1" constantHeight="0" constantMoveX="0" constantRotation="0" constantScaleX="1" constantScaleY="1" restartAnimsOnVisible="false" idlePath="Ghost/H Eyes Open.png" talkPath="../../../Pictures/Commissions/!Premade/Ghost/Ghost PNGTuber Model/Parts/HEyes Closed.png" blinkPath="Ghost/H Eyes Closed.png" talkBlinkPath="" screamPath="" syncAnims="false" smoothTalkTint="false" scaleX="1" scaleY="1" posX="-21.699993" posY="-130.2" rot="0" pivotX="0.46900001" pivotY="0.31400001" rotateChildren="false" motionParent="1688e335-f589-4b63-ae0b-0577619d22f8" motionDelayTime="0" hideWithParent="true" motionDrag="0" motionSpring="0" distanceLimit="-1" rotationEffect="0" inheritTint="false" allowIndividualMotion="false" rotationIgnorePivots="false" motionStretch="0" stretchStrengthX="1" stretchStrengthY="1" stretchMinX="0.5" stretchMinY="0.5" stretchMaxX="2" stretchMaxY="2" weightPosX="0" weightPosY="1" trackingEnabled="false" trackingType="1" followElliptical="false" mouseNeutralX="-1" mouseNeutralY="-1" mouseAreaX="-1" mouseAreaY="-1" trackingAxis="0" trackingDeadzone="0" trackingSmooth="0.2" trackingLimitX="50" trackingLimitY="50" untrackedWhenHidden="true" mouseEffect="1" joypadEffect="1" trackingRotLimitX="0" trackingRotLimitY="0" pinLoaded="false" blendMode="Normal" scaleFilter="true" clipID="" isFolder="false" inFolder="b8e9a9b4-1fad-4fbb-8246-f06860d0545e">
+            <folderContent/>
+            <screamTint r="1" g="1" b="1" a="1"/>
+            <talkBlinkTint r="1" g="1" b="1" a="1"/>
+            <blinkTint r="1" g="1" b="1" a="1"/>
+            <talkTint r="1" g="1" b="1" a="1"/>
+            <idleTint r="1" g="1" b="1" a="1"/>
+            <breathTint r="1" g="1" b="1" a="1"/>
+            <layerColor r="0" g="0" b="0" a="0"/>
+        </layer>
+        <layer id="9e29a78a-9c5a-4dcf-b393-fafa544d4d10" name="H Mouth" visible="true" talking="true" talkThreshold="0.15000001" smoothInput="false" smoothAmount="5" restartOnSwap="false" useBlink="false" talkBlink="false" blinkTime="6" blinkDur="0.2" blinkVar="4" bounceType="1" bounceHeight="80" bounceMoveX="0" bounceRotation="0" bounceScaleX="0" bounceScaleY="0" bounceTime="0.333" breathing="true" breathHeight="30" breathTime="4" breathMoveX="0" breathScaleX="0.1" breathScaleY="0.1" breathCircular="false" breatheWhileTalking="false" breathRotation="0" doBreathTint="false" screaming="false" screamThreshold="0.85000002" screamVibrate="true" screamVibrateAmount="5" screamVibrateSpeed="1" constantHeight="0" constantMoveX="0" constantRotation="0" constantScaleX="1" constantScaleY="1" restartAnimsOnVisible="false" idlePath="Ghost/H Mouth Closed.png" talkPath="Ghost/H Mouth Open.png" blinkPath="" talkBlinkPath="" screamPath="" syncAnims="false" smoothTalkTint="false" scaleX="1" scaleY="1" posX="-16.100002" posY="-59.500008" rot="0" pivotX="0.477" pivotY="0.41499999" rotateChildren="false" motionParent="1688e335-f589-4b63-ae0b-0577619d22f8" motionDelayTime="0" hideWithParent="true" motionDrag="0" motionSpring="0" distanceLimit="-1" rotationEffect="0" inheritTint="false" allowIndividualMotion="false" rotationIgnorePivots="false" motionStretch="0" stretchStrengthX="1" stretchStrengthY="1" stretchMinX="0.5" stretchMinY="0.5" stretchMaxX="2" stretchMaxY="2" weightPosX="0" weightPosY="1" trackingEnabled="false" trackingType="1" followElliptical="false" mouseNeutralX="800" mouseNeutralY="450" mouseAreaX="800" mouseAreaY="450" trackingAxis="0" trackingDeadzone="0" trackingSmooth="0.2" trackingLimitX="50" trackingLimitY="50" untrackedWhenHidden="true" mouseEffect="1" joypadEffect="1" trackingRotLimitX="0" trackingRotLimitY="0" pinLoaded="false" blendMode="Normal" scaleFilter="true" clipID="" isFolder="false" inFolder="b8e9a9b4-1fad-4fbb-8246-f06860d0545e">
+            <folderContent/>
+            <screamTint r="1" g="1" b="1" a="1"/>
+            <talkBlinkTint r="1" g="1" b="1" a="1"/>
+            <blinkTint r="1" g="1" b="1" a="1"/>
+            <talkTint r="1" g="1" b="1" a="1"/>
+            <idleTint r="1" g="1" b="1" a="1"/>
+            <breathTint r="1" g="1" b="1" a="1"/>
+            <layerColor r="0" g="0" b="0" a="0"/>
+        </layer>
+        <layer id="6b5233ad-dd9e-47c5-8447-8574c8ba2672" name="H Body" visible="true" talking="false" talkThreshold="0.15000001" smoothInput="false" smoothAmount="5" restartOnSwap="false" useBlink="false" talkBlink="false" blinkTime="6" blinkDur="0.2" blinkVar="4" bounceType="0" bounceHeight="50" bounceMoveX="0" bounceRotation="0" bounceScaleX="0" bounceScaleY="0" bounceTime="0.333" breathing="true" breathHeight="50" breathTime="4" breathMoveX="40" breathScaleX="0" breathScaleY="0" breathCircular="true" breatheWhileTalking="true" breathRotation="0" doBreathTint="false" screaming="false" screamThreshold="0.85000002" screamVibrate="true" screamVibrateAmount="5" screamVibrateSpeed="1" constantHeight="0" constantMoveX="0" constantRotation="0" constantScaleX="1" constantScaleY="1" restartAnimsOnVisible="false" idlePath="Ghost/H Body.png" talkPath="" blinkPath="" talkBlinkPath="" screamPath="" syncAnims="false" smoothTalkTint="false" scaleX="1" scaleY="1" posX="0" posY="0" rot="0" pivotX="0.5" pivotY="0.5" rotateChildren="false" motionParent="" motionDelayTime="0" hideWithParent="true" motionDrag="0" motionSpring="0" distanceLimit="-1" rotationEffect="0" inheritTint="false" allowIndividualMotion="false" rotationIgnorePivots="false" motionStretch="0" stretchStrengthX="1" stretchStrengthY="1" stretchMinX="0.5" stretchMinY="0.5" stretchMaxX="2" stretchMaxY="2" weightPosX="0" weightPosY="1" trackingEnabled="true" trackingType="1" followElliptical="false" mouseNeutralX="800" mouseNeutralY="450" mouseAreaX="800" mouseAreaY="450" trackingAxis="0" trackingDeadzone="0" trackingSmooth="0.2" trackingLimitX="50" trackingLimitY="50" untrackedWhenHidden="false" mouseEffect="1" joypadEffect="1" trackingRotLimitX="10" trackingRotLimitY="0" pinLoaded="false" blendMode="Normal" scaleFilter="true" clipID="" isFolder="false" inFolder="b8e9a9b4-1fad-4fbb-8246-f06860d0545e">
+            <folderContent/>
+            <screamTint r="1" g="1" b="1" a="1"/>
+            <talkBlinkTint r="1" g="1" b="1" a="1"/>
+            <blinkTint r="1" g="1" b="1" a="1"/>
+            <talkTint r="1" g="1" b="1" a="1"/>
+            <idleTint r="1" g="1" b="1" a="1"/>
+            <breathTint r="1" g="1" b="1" a="1"/>
+            <layerColor r="0" g="0" b="0" a="0"/>
+        </layer>
+        <layer id="93f7d09a-3f58-45a6-ac13-a00837f50257" name="Sad" visible="false" isFolder="true">
+            <folderContent>
+                <id>de2cee31-f3cd-49b7-8aec-27b547014689</id>
+                <id>aee4f7f7-055e-4cee-820f-c14501dc7437</id>
+                <id>62f75b3e-c440-4914-b947-b46374daffb0</id>
+                <id>d9f68fef-6147-43b9-b473-c717a23c4fcd</id>
+            </folderContent>
+            <layerColor r="0.1" g="0.2" b="0.5" a="1"/>
+        </layer>
+        <layer id="de2cee31-f3cd-49b7-8aec-27b547014689" name="S Face Tracker" visible="true" talking="true" talkThreshold="0.15000001" smoothInput="false" smoothAmount="5" restartOnSwap="false" useBlink="true" talkBlink="false" blinkTime="6" blinkDur="0.2" blinkVar="4" bounceType="1" bounceHeight="80" bounceMoveX="0" bounceRotation="0" bounceScaleX="0" bounceScaleY="0" bounceTime="0.333" breathing="true" breathHeight="30" breathTime="4" breathMoveX="0" breathScaleX="0.1" breathScaleY="0.1" breathCircular="false" breatheWhileTalking="false" breathRotation="0" doBreathTint="false" screaming="false" screamThreshold="0.85000002" screamVibrate="true" screamVibrateAmount="5" screamVibrateSpeed="1" constantHeight="0" constantMoveX="0" constantRotation="0" constantScaleX="1" constantScaleY="1" restartAnimsOnVisible="false" idlePath="" talkPath="" blinkPath="" talkBlinkPath="" screamPath="" syncAnims="false" smoothTalkTint="false" scaleX="1" scaleY="1" posX="0" posY="0" rot="0" pivotX="0.5" pivotY="0.5" rotateChildren="false" motionParent="d9f68fef-6147-43b9-b473-c717a23c4fcd" motionDelayTime="0" hideWithParent="true" motionDrag="0" motionSpring="0" distanceLimit="-1" rotationEffect="0" inheritTint="false" allowIndividualMotion="false" rotationIgnorePivots="false" motionStretch="0" stretchStrengthX="1" stretchStrengthY="1" stretchMinX="0.5" stretchMinY="0.5" stretchMaxX="2" stretchMaxY="2" weightPosX="0" weightPosY="1" trackingEnabled="true" trackingType="1" followElliptical="false" mouseNeutralX="800" mouseNeutralY="450" mouseAreaX="800" mouseAreaY="450" trackingAxis="0" trackingDeadzone="0" trackingSmooth="0.2" trackingLimitX="20" trackingLimitY="20" untrackedWhenHidden="false" mouseEffect="1" joypadEffect="1" trackingRotLimitX="0" trackingRotLimitY="0" pinLoaded="false" blendMode="Normal" scaleFilter="false" clipID="" isFolder="false" inFolder="93f7d09a-3f58-45a6-ac13-a00837f50257">
+            <folderContent/>
+            <screamTint r="1" g="1" b="1" a="1"/>
+            <talkBlinkTint r="1" g="1" b="1" a="1"/>
+            <blinkTint r="1" g="1" b="1" a="1"/>
+            <talkTint r="1" g="1" b="1" a="1"/>
+            <idleTint r="1" g="1" b="1" a="1"/>
+            <breathTint r="1" g="1" b="1" a="1"/>
+            <layerColor r="0" g="0" b="0" a="0"/>
+        </layer>
+        <layer id="aee4f7f7-055e-4cee-820f-c14501dc7437" name="S Eyes" visible="true" talking="false" talkThreshold="0.15000001" smoothInput="false" smoothAmount="5" restartOnSwap="false" useBlink="true" talkBlink="false" blinkTime="6" blinkDur="0.2" blinkVar="4" bounceType="1" bounceHeight="80" bounceMoveX="0" bounceRotation="0" bounceScaleX="0" bounceScaleY="0" bounceTime="0.333" breathing="true" breathHeight="30" breathTime="4" breathMoveX="0" breathScaleX="0.1" breathScaleY="0.1" breathCircular="false" breatheWhileTalking="false" breathRotation="0" doBreathTint="false" screaming="false" screamThreshold="0.85000002" screamVibrate="true" screamVibrateAmount="5" screamVibrateSpeed="1" constantHeight="0" constantMoveX="0" constantRotation="0" constantScaleX="1" constantScaleY="1" restartAnimsOnVisible="false" idlePath="Ghost/S Eyes.png" talkPath="../../../Pictures/Commissions/!Premade/Ghost/Ghost PNGTuber Model/Parts/SEyes Closed.png" blinkPath="Ghost/S Eyes Closed.png" talkBlinkPath="" screamPath="" syncAnims="false" smoothTalkTint="false" scaleX="1" scaleY="1" posX="-11.199981" posY="-146.3" rot="0" pivotX="0.48400003" pivotY="0.29100001" rotateChildren="false" motionParent="de2cee31-f3cd-49b7-8aec-27b547014689" motionDelayTime="0" hideWithParent="true" motionDrag="0" motionSpring="0" distanceLimit="-1" rotationEffect="0" inheritTint="false" allowIndividualMotion="false" rotationIgnorePivots="false" motionStretch="0" stretchStrengthX="1" stretchStrengthY="1" stretchMinX="0.5" stretchMinY="0.5" stretchMaxX="2" stretchMaxY="2" weightPosX="0" weightPosY="1" trackingEnabled="false" trackingType="1" followElliptical="false" mouseNeutralX="-1" mouseNeutralY="-1" mouseAreaX="-1" mouseAreaY="-1" trackingAxis="0" trackingDeadzone="0" trackingSmooth="0.2" trackingLimitX="50" trackingLimitY="50" untrackedWhenHidden="true" mouseEffect="1" joypadEffect="1" trackingRotLimitX="0" trackingRotLimitY="0" pinLoaded="false" blendMode="Normal" scaleFilter="false" clipID="" isFolder="false" inFolder="93f7d09a-3f58-45a6-ac13-a00837f50257">
+            <folderContent/>
+            <screamTint r="1" g="1" b="1" a="1"/>
+            <talkBlinkTint r="1" g="1" b="1" a="1"/>
+            <blinkTint r="1" g="1" b="1" a="1"/>
+            <talkTint r="1" g="1" b="1" a="1"/>
+            <idleTint r="1" g="1" b="1" a="1"/>
+            <breathTint r="1" g="1" b="1" a="1"/>
+            <layerColor r="0" g="0" b="0" a="0"/>
+        </layer>
+        <layer id="62f75b3e-c440-4914-b947-b46374daffb0" name="S Mouth" visible="true" talking="true" talkThreshold="0.15000001" smoothInput="false" smoothAmount="5" restartOnSwap="false" useBlink="false" talkBlink="false" blinkTime="6" blinkDur="0.2" blinkVar="4" bounceType="1" bounceHeight="80" bounceMoveX="0" bounceRotation="0" bounceScaleX="0" bounceScaleY="0" bounceTime="0.333" breathing="true" breathHeight="30" breathTime="4" breathMoveX="0" breathScaleX="0.1" breathScaleY="0.1" breathCircular="false" breatheWhileTalking="false" breathRotation="0" doBreathTint="false" screaming="false" screamThreshold="0.85000002" screamVibrate="true" screamVibrateAmount="5" screamVibrateSpeed="1" constantHeight="0" constantMoveX="0" constantRotation="0" constantScaleX="1" constantScaleY="1" restartAnimsOnVisible="false" idlePath="Ghost/S MouthClosed.png" talkPath="Ghost/S MouthOpen.png" blinkPath="" talkBlinkPath="" screamPath="" syncAnims="false" smoothTalkTint="false" scaleX="1" scaleY="1" posX="9.5367432e-07" posY="-86.800003" rot="0" pivotX="0.5" pivotY="0.37599999" rotateChildren="false" motionParent="de2cee31-f3cd-49b7-8aec-27b547014689" motionDelayTime="0" hideWithParent="true" motionDrag="0" motionSpring="0" distanceLimit="-1" rotationEffect="0" inheritTint="false" allowIndividualMotion="false" rotationIgnorePivots="false" motionStretch="0" stretchStrengthX="1" stretchStrengthY="1" stretchMinX="0.5" stretchMinY="0.5" stretchMaxX="2" stretchMaxY="2" weightPosX="0" weightPosY="1" trackingEnabled="false" trackingType="1" followElliptical="false" mouseNeutralX="-1" mouseNeutralY="-1" mouseAreaX="-1" mouseAreaY="-1" trackingAxis="0" trackingDeadzone="0" trackingSmooth="0.2" trackingLimitX="50" trackingLimitY="50" untrackedWhenHidden="true" mouseEffect="1" joypadEffect="1" trackingRotLimitX="0" trackingRotLimitY="0" pinLoaded="false" blendMode="Normal" scaleFilter="true" clipID="" isFolder="false" inFolder="93f7d09a-3f58-45a6-ac13-a00837f50257">
+            <folderContent/>
+            <screamTint r="1" g="1" b="1" a="1"/>
+            <talkBlinkTint r="1" g="1" b="1" a="1"/>
+            <blinkTint r="1" g="1" b="1" a="1"/>
+            <talkTint r="1" g="1" b="1" a="1"/>
+            <idleTint r="1" g="1" b="1" a="1"/>
+            <breathTint r="1" g="1" b="1" a="1"/>
+            <layerColor r="0" g="0" b="0" a="0"/>
+        </layer>
+        <layer id="d9f68fef-6147-43b9-b473-c717a23c4fcd" name="S Body" visible="true" talking="false" talkThreshold="0.15000001" smoothInput="false" smoothAmount="5" restartOnSwap="false" useBlink="false" talkBlink="false" blinkTime="6" blinkDur="0.2" blinkVar="4" bounceType="0" bounceHeight="20" bounceMoveX="0" bounceRotation="0" bounceScaleX="0" bounceScaleY="0" bounceTime="0.333" breathing="true" breathHeight="30" breathTime="4" breathMoveX="0" breathScaleX="0" breathScaleY="0" breathCircular="false" breatheWhileTalking="false" breathRotation="0" doBreathTint="false" screaming="false" screamThreshold="0.85000002" screamVibrate="true" screamVibrateAmount="5" screamVibrateSpeed="1" constantHeight="0" constantMoveX="0" constantRotation="0" constantScaleX="1" constantScaleY="1" restartAnimsOnVisible="false" idlePath="Ghost/S Body.png" talkPath="" blinkPath="" talkBlinkPath="" screamPath="" syncAnims="false" smoothTalkTint="false" scaleX="1" scaleY="1" posX="27.300024" posY="0" rot="0" pivotX="0.53900003" pivotY="0.5" rotateChildren="false" motionParent="" motionDelayTime="0" hideWithParent="true" motionDrag="0" motionSpring="0" distanceLimit="-1" rotationEffect="0" inheritTint="false" allowIndividualMotion="false" rotationIgnorePivots="false" motionStretch="0" stretchStrengthX="1" stretchStrengthY="1" stretchMinX="0.5" stretchMinY="0.5" stretchMaxX="2" stretchMaxY="2" weightPosX="0" weightPosY="1" trackingEnabled="true" trackingType="1" followElliptical="false" mouseNeutralX="800" mouseNeutralY="450" mouseAreaX="800" mouseAreaY="450" trackingAxis="0" trackingDeadzone="0" trackingSmooth="0.2" trackingLimitX="20" trackingLimitY="20" untrackedWhenHidden="false" mouseEffect="1" joypadEffect="1" trackingRotLimitX="5" trackingRotLimitY="0" pinLoaded="false" blendMode="Normal" scaleFilter="true" clipID="" isFolder="false" inFolder="93f7d09a-3f58-45a6-ac13-a00837f50257">
+            <folderContent/>
+            <screamTint r="1" g="1" b="1" a="1"/>
+            <talkBlinkTint r="1" g="1" b="1" a="1"/>
+            <blinkTint r="1" g="1" b="1" a="1"/>
+            <talkTint r="1" g="1" b="1" a="1"/>
+            <idleTint r="1" g="1" b="1" a="1"/>
+            <breathTint r="1" g="1" b="1" a="1"/>
+            <layerColor r="0" g="0" b="0" a="0"/>
+        </layer>
+        <layer id="e273d1fc-a500-4676-add0-db3468d0cc56" name="Angry" visible="false" isFolder="true">
+            <folderContent>
+                <id>ef8a25fe-c42e-4de1-aa75-95bb05815b1f</id>
+                <id>37cf2b26-79ad-4a89-8a4e-f9eeea82472e</id>
+                <id>edc0d061-0c02-4a57-bee7-f6041aac6cd9</id>
+                <id>c143235f-c0b7-4d46-8f8e-2d694b34ccbc</id>
+                <id>8f1db64d-fef1-4b4e-bad6-ba7437c4ad7f</id>
+            </folderContent>
+            <layerColor r="0.5" g="0" b="0.1" a="1"/>
+        </layer>
+        <layer id="ef8a25fe-c42e-4de1-aa75-95bb05815b1f" name="A Face Tracker" visible="true" talking="true" talkThreshold="0.15000001" smoothInput="false" smoothAmount="5" restartOnSwap="false" useBlink="true" talkBlink="false" blinkTime="6" blinkDur="0.2" blinkVar="4" bounceType="1" bounceHeight="80" bounceMoveX="0" bounceRotation="0" bounceScaleX="0" bounceScaleY="0" bounceTime="0.333" breathing="true" breathHeight="30" breathTime="4" breathMoveX="0" breathScaleX="0.1" breathScaleY="0.1" breathCircular="false" breatheWhileTalking="false" breathRotation="0" doBreathTint="false" screaming="false" screamThreshold="0.85000002" screamVibrate="true" screamVibrateAmount="5" screamVibrateSpeed="1" constantHeight="0" constantMoveX="0" constantRotation="0" constantScaleX="1" constantScaleY="1" restartAnimsOnVisible="false" idlePath="" talkPath="" blinkPath="" talkBlinkPath="" screamPath="" syncAnims="false" smoothTalkTint="false" scaleX="1" scaleY="1" posX="0" posY="0" rot="0" pivotX="0.5" pivotY="0.5" rotateChildren="false" motionParent="8f1db64d-fef1-4b4e-bad6-ba7437c4ad7f" motionDelayTime="0" hideWithParent="true" motionDrag="0" motionSpring="0" distanceLimit="-1" rotationEffect="0" inheritTint="false" allowIndividualMotion="false" rotationIgnorePivots="false" motionStretch="0" stretchStrengthX="1" stretchStrengthY="1" stretchMinX="0.5" stretchMinY="0.5" stretchMaxX="2" stretchMaxY="2" weightPosX="0" weightPosY="1" trackingEnabled="true" trackingType="1" followElliptical="false" mouseNeutralX="800" mouseNeutralY="450" mouseAreaX="800" mouseAreaY="450" trackingAxis="0" trackingDeadzone="0" trackingSmooth="0.2" trackingLimitX="30" trackingLimitY="30" untrackedWhenHidden="false" mouseEffect="1" joypadEffect="1" trackingRotLimitX="0" trackingRotLimitY="0" pinLoaded="false" blendMode="Normal" scaleFilter="false" clipID="" isFolder="false" inFolder="e273d1fc-a500-4676-add0-db3468d0cc56">
+            <folderContent/>
+            <screamTint r="1" g="1" b="1" a="1"/>
+            <talkBlinkTint r="1" g="1" b="1" a="1"/>
+            <blinkTint r="1" g="1" b="1" a="1"/>
+            <talkTint r="1" g="1" b="1" a="1"/>
+            <idleTint r="1" g="1" b="1" a="1"/>
+            <breathTint r="1" g="1" b="1" a="1"/>
+            <layerColor r="0" g="0" b="0" a="0"/>
+        </layer>
+        <layer id="37cf2b26-79ad-4a89-8a4e-f9eeea82472e" name="A Brows" visible="true" talking="false" talkThreshold="0.15000001" smoothInput="false" smoothAmount="5" restartOnSwap="false" useBlink="false" talkBlink="false" blinkTime="6" blinkDur="0.2" blinkVar="4" bounceType="1" bounceHeight="80" bounceMoveX="0" bounceRotation="0" bounceScaleX="0" bounceScaleY="0" bounceTime="0.333" breathing="true" breathHeight="30" breathTime="4" breathMoveX="0" breathScaleX="0.1" breathScaleY="0.1" breathCircular="false" breatheWhileTalking="false" breathRotation="0" doBreathTint="false" screaming="false" screamThreshold="0.85000002" screamVibrate="true" screamVibrateAmount="5" screamVibrateSpeed="1" constantHeight="0" constantMoveX="0" constantRotation="0" constantScaleX="1" constantScaleY="1" restartAnimsOnVisible="false" idlePath="Ghost/A Brows.png" talkPath="" blinkPath="" talkBlinkPath="" screamPath="" syncAnims="false" smoothTalkTint="false" scaleX="1" scaleY="1" posX="-57.400009" posY="-108.49999" rot="0" pivotX="0.41799998" pivotY="0.345" rotateChildren="false" motionParent="ef8a25fe-c42e-4de1-aa75-95bb05815b1f" motionDelayTime="0" hideWithParent="true" motionDrag="0" motionSpring="0" distanceLimit="-1" rotationEffect="0" inheritTint="false" allowIndividualMotion="false" rotationIgnorePivots="false" motionStretch="0" stretchStrengthX="1" stretchStrengthY="1" stretchMinX="0.5" stretchMinY="0.5" stretchMaxX="2" stretchMaxY="2" weightPosX="0" weightPosY="1" trackingEnabled="false" trackingType="1" followElliptical="false" mouseNeutralX="-1" mouseNeutralY="-1" mouseAreaX="-1" mouseAreaY="-1" trackingAxis="0" trackingDeadzone="0" trackingSmooth="0.2" trackingLimitX="50" trackingLimitY="50" untrackedWhenHidden="true" mouseEffect="1" joypadEffect="1" trackingRotLimitX="0" trackingRotLimitY="0" pinLoaded="false" blendMode="Normal" scaleFilter="true" clipID="" isFolder="false" inFolder="e273d1fc-a500-4676-add0-db3468d0cc56">
+            <folderContent/>
+            <screamTint r="1" g="1" b="1" a="1"/>
+            <talkBlinkTint r="1" g="1" b="1" a="1"/>
+            <blinkTint r="1" g="1" b="1" a="1"/>
+            <talkTint r="1" g="1" b="1" a="1"/>
+            <idleTint r="1" g="1" b="1" a="1"/>
+            <breathTint r="1" g="1" b="1" a="1"/>
+            <layerColor r="0" g="0" b="0" a="0"/>
+        </layer>
+        <layer id="edc0d061-0c02-4a57-bee7-f6041aac6cd9" name="A Eyes" visible="true" talking="false" talkThreshold="0.15000001" smoothInput="false" smoothAmount="5" restartOnSwap="false" useBlink="true" talkBlink="false" blinkTime="6" blinkDur="0.2" blinkVar="4" bounceType="1" bounceHeight="80" bounceMoveX="0" bounceRotation="0" bounceScaleX="0" bounceScaleY="0" bounceTime="0.333" breathing="true" breathHeight="30" breathTime="4" breathMoveX="0" breathScaleX="0.1" breathScaleY="0.1" breathCircular="false" breatheWhileTalking="false" breathRotation="0" doBreathTint="false" screaming="false" screamThreshold="0.85000002" screamVibrate="true" screamVibrateAmount="5" screamVibrateSpeed="1" constantHeight="0" constantMoveX="0" constantRotation="0" constantScaleX="1" constantScaleY="1" restartAnimsOnVisible="false" idlePath="Ghost/A EyesOpen.png" talkPath="../../../Pictures/Commissions/!Premade/Ghost/Ghost PNGTuber Model/Parts/AEyesClosed.png" blinkPath="Ghost/A EyesClosed.png" talkBlinkPath="" screamPath="" syncAnims="false" smoothTalkTint="false" scaleX="1" scaleY="1" posX="-54.599983" posY="-86.800011" rot="0" pivotX="0.42200002" pivotY="0.37599999" rotateChildren="false" motionParent="ef8a25fe-c42e-4de1-aa75-95bb05815b1f" motionDelayTime="0" hideWithParent="true" motionDrag="0" motionSpring="0" distanceLimit="-1" rotationEffect="0" inheritTint="false" allowIndividualMotion="false" rotationIgnorePivots="false" motionStretch="0" stretchStrengthX="1" stretchStrengthY="1" stretchMinX="0.5" stretchMinY="0.5" stretchMaxX="2" stretchMaxY="2" weightPosX="0" weightPosY="1" trackingEnabled="false" trackingType="1" followElliptical="false" mouseNeutralX="-1" mouseNeutralY="-1" mouseAreaX="-1" mouseAreaY="-1" trackingAxis="0" trackingDeadzone="0" trackingSmooth="0.2" trackingLimitX="50" trackingLimitY="50" untrackedWhenHidden="true" mouseEffect="1" joypadEffect="1" trackingRotLimitX="0" trackingRotLimitY="0" pinLoaded="false" blendMode="Normal" scaleFilter="true" clipID="" isFolder="false" inFolder="e273d1fc-a500-4676-add0-db3468d0cc56">
+            <folderContent/>
+            <screamTint r="1" g="1" b="1" a="1"/>
+            <talkBlinkTint r="1" g="1" b="1" a="1"/>
+            <blinkTint r="1" g="1" b="1" a="1"/>
+            <talkTint r="1" g="1" b="1" a="1"/>
+            <idleTint r="1" g="1" b="1" a="1"/>
+            <breathTint r="1" g="1" b="1" a="1"/>
+            <layerColor r="0" g="0" b="0" a="0"/>
+        </layer>
+        <layer id="c143235f-c0b7-4d46-8f8e-2d694b34ccbc" name="A Mouth" visible="true" talking="true" talkThreshold="0.15000001" smoothInput="false" smoothAmount="5" restartOnSwap="false" useBlink="false" talkBlink="false" blinkTime="6" blinkDur="0.2" blinkVar="4" bounceType="3" bounceHeight="0" bounceMoveX="0" bounceRotation="0" bounceScaleX="0" bounceScaleY="0" bounceTime="0.333" breathing="false" breathHeight="30" breathTime="4" breathMoveX="0" breathScaleX="0.1" breathScaleY="0.1" breathCircular="false" breatheWhileTalking="false" breathRotation="0" doBreathTint="false" screaming="false" screamThreshold="0.85000002" screamVibrate="true" screamVibrateAmount="5" screamVibrateSpeed="1" constantHeight="0" constantMoveX="0" constantRotation="0" constantScaleX="1" constantScaleY="1" restartAnimsOnVisible="false" idlePath="Ghost/A MouthClosed.png" talkPath="Ghost/A MouthOpen.png" blinkPath="" talkBlinkPath="" screamPath="" syncAnims="false" smoothTalkTint="false" scaleX="1" scaleY="1" posX="-48.999992" posY="-27.300005" rot="0" pivotX="0.43000001" pivotY="0.461" rotateChildren="false" motionParent="ef8a25fe-c42e-4de1-aa75-95bb05815b1f" motionDelayTime="0" hideWithParent="true" motionDrag="0" motionSpring="0" distanceLimit="-1" rotationEffect="0" inheritTint="false" allowIndividualMotion="true" rotationIgnorePivots="false" motionStretch="0" stretchStrengthX="1" stretchStrengthY="1" stretchMinX="0.5" stretchMinY="0.5" stretchMaxX="2" stretchMaxY="2" weightPosX="0" weightPosY="1" trackingEnabled="false" trackingType="1" followElliptical="false" mouseNeutralX="-1" mouseNeutralY="-1" mouseAreaX="-1" mouseAreaY="-1" trackingAxis="0" trackingDeadzone="0" trackingSmooth="0.2" trackingLimitX="50" trackingLimitY="50" untrackedWhenHidden="true" mouseEffect="1" joypadEffect="1" trackingRotLimitX="0" trackingRotLimitY="0" pinLoaded="false" blendMode="Normal" scaleFilter="true" clipID="" isFolder="false" inFolder="e273d1fc-a500-4676-add0-db3468d0cc56">
+            <folderContent/>
+            <screamTint r="1" g="1" b="1" a="1"/>
+            <talkBlinkTint r="1" g="1" b="1" a="1"/>
+            <blinkTint r="1" g="1" b="1" a="1"/>
+            <talkTint r="1" g="1" b="1" a="1"/>
+            <idleTint r="1" g="1" b="1" a="1"/>
+            <breathTint r="1" g="1" b="1" a="1"/>
+            <layerColor r="0" g="0" b="0" a="0"/>
+        </layer>
+        <layer id="8f1db64d-fef1-4b4e-bad6-ba7437c4ad7f" name="A Body" visible="true" talking="false" talkThreshold="0.15000001" smoothInput="false" smoothAmount="5" restartOnSwap="false" useBlink="false" talkBlink="false" blinkTime="6" blinkDur="0.2" blinkVar="4" bounceType="2" bounceHeight="50" bounceMoveX="0" bounceRotation="0" bounceScaleX="0" bounceScaleY="0" bounceTime="0.0099999998" breathing="true" breathHeight="10" breathTime="0.12" breathMoveX="10" breathScaleX="0" breathScaleY="0" breathCircular="true" breatheWhileTalking="true" breathRotation="0" doBreathTint="false" screaming="false" screamThreshold="0.85000002" screamVibrate="true" screamVibrateAmount="5" screamVibrateSpeed="1" constantHeight="0" constantMoveX="0" constantRotation="0" constantScaleX="1" constantScaleY="1" restartAnimsOnVisible="false" idlePath="Ghost/A Body.png" talkPath="" blinkPath="" talkBlinkPath="" screamPath="" syncAnims="false" smoothTalkTint="false" scaleX="1" scaleY="1" posX="-21.699989" posY="-5.5999894" rot="0" pivotX="0.46900001" pivotY="0.49200001" rotateChildren="false" motionParent="" motionDelayTime="0" hideWithParent="true" motionDrag="0" motionSpring="0" distanceLimit="-1" rotationEffect="0" inheritTint="false" allowIndividualMotion="false" rotationIgnorePivots="false" motionStretch="0" stretchStrengthX="1" stretchStrengthY="1" stretchMinX="0.5" stretchMinY="0.5" stretchMaxX="2" stretchMaxY="2" weightPosX="0" weightPosY="1" trackingEnabled="true" trackingType="1" followElliptical="false" mouseNeutralX="800" mouseNeutralY="450" mouseAreaX="800" mouseAreaY="450" trackingAxis="0" trackingDeadzone="0" trackingSmooth="0.2" trackingLimitX="50" trackingLimitY="50" untrackedWhenHidden="false" mouseEffect="1" joypadEffect="1" trackingRotLimitX="10" trackingRotLimitY="0" pinLoaded="false" blendMode="Normal" scaleFilter="true" clipID="" isFolder="false" inFolder="e273d1fc-a500-4676-add0-db3468d0cc56">
+            <folderContent/>
+            <screamTint r="1" g="1" b="1" a="1"/>
+            <talkBlinkTint r="1" g="1" b="1" a="1"/>
+            <blinkTint r="1" g="1" b="1" a="1"/>
+            <talkTint r="1" g="1" b="1" a="1"/>
+            <idleTint r="1" g="1" b="1" a="1"/>
+            <breathTint r="1" g="1" b="1" a="1"/>
+            <layerColor r="0" g="0" b="0" a="0"/>
+        </layer>
+        <layer id="7e953fe4-7f4e-44a1-af5c-cad573f45fa1" name="Fear" visible="false" isFolder="true">
+            <folderContent>
+                <id>d544c7d7-ee25-40f6-93d9-97f79ecd2016</id>
+                <id>4fbe1d9a-579e-4479-9e23-55482f718a15</id>
+                <id>7dcb7fca-e3f8-403c-93f2-638ddd936b9f</id>
+                <id>76f68baa-56eb-410c-9b9c-989a9f5e2e4b</id>
+                <id>cf5eb208-e046-4498-af7f-3e38e95f8642</id>
+                <id>77f5d3a3-7a3c-44ec-b698-e5af5dddc1a6</id>
+            </folderContent>
+            <layerColor r="0.5" g="0.34999999" b="0.1" a="1"/>
+        </layer>
+        <layer id="d544c7d7-ee25-40f6-93d9-97f79ecd2016" name="F Tracker" visible="true" talking="true" talkThreshold="0.15000001" smoothInput="false" smoothAmount="5" restartOnSwap="false" useBlink="true" talkBlink="false" blinkTime="6" blinkDur="0.2" blinkVar="4" bounceType="1" bounceHeight="80" bounceMoveX="0" bounceRotation="0" bounceScaleX="0" bounceScaleY="0" bounceTime="0.333" breathing="true" breathHeight="30" breathTime="4" breathMoveX="0" breathScaleX="0.1" breathScaleY="0.1" breathCircular="false" breatheWhileTalking="false" breathRotation="0" doBreathTint="false" screaming="false" screamThreshold="0.85000002" screamVibrate="true" screamVibrateAmount="5" screamVibrateSpeed="1" constantHeight="0" constantMoveX="0" constantRotation="0" constantScaleX="1" constantScaleY="1" restartAnimsOnVisible="false" idlePath="" talkPath="" blinkPath="" talkBlinkPath="" screamPath="" syncAnims="false" smoothTalkTint="false" scaleX="1" scaleY="1" posX="0" posY="0" rot="0" pivotX="0.5" pivotY="0.5" rotateChildren="false" motionParent="77f5d3a3-7a3c-44ec-b698-e5af5dddc1a6" motionDelayTime="0" hideWithParent="true" motionDrag="0" motionSpring="0" distanceLimit="-1" rotationEffect="0" inheritTint="false" allowIndividualMotion="false" rotationIgnorePivots="false" motionStretch="0" stretchStrengthX="1" stretchStrengthY="1" stretchMinX="0.5" stretchMinY="0.5" stretchMaxX="2" stretchMaxY="2" weightPosX="0" weightPosY="1" trackingEnabled="true" trackingType="1" followElliptical="false" mouseNeutralX="800" mouseNeutralY="450" mouseAreaX="800" mouseAreaY="450" trackingAxis="0" trackingDeadzone="0" trackingSmooth="0.2" trackingLimitX="20" trackingLimitY="20" untrackedWhenHidden="false" mouseEffect="1" joypadEffect="1" trackingRotLimitX="0" trackingRotLimitY="0" pinLoaded="false" blendMode="Normal" scaleFilter="false" clipID="" isFolder="false" inFolder="7e953fe4-7f4e-44a1-af5c-cad573f45fa1">
+            <folderContent/>
+            <screamTint r="1" g="1" b="1" a="1"/>
+            <talkBlinkTint r="1" g="1" b="1" a="1"/>
+            <blinkTint r="1" g="1" b="1" a="1"/>
+            <talkTint r="1" g="1" b="1" a="1"/>
+            <idleTint r="1" g="1" b="1" a="1"/>
+            <breathTint r="1" g="1" b="1" a="1"/>
+            <layerColor r="0" g="0" b="0" a="0"/>
+        </layer>
+        <layer id="4fbe1d9a-579e-4479-9e23-55482f718a15" name="F Brow Right" visible="true" talking="false" talkThreshold="0.15000001" smoothInput="false" smoothAmount="5" restartOnSwap="false" useBlink="false" talkBlink="false" blinkTime="6" blinkDur="0.2" blinkVar="4" bounceType="1" bounceHeight="80" bounceMoveX="0" bounceRotation="0" bounceScaleX="0" bounceScaleY="0" bounceTime="0.333" breathing="true" breathHeight="30" breathTime="4" breathMoveX="0" breathScaleX="0.1" breathScaleY="0.1" breathCircular="false" breatheWhileTalking="false" breathRotation="0" doBreathTint="false" screaming="false" screamThreshold="0.85000002" screamVibrate="true" screamVibrateAmount="5" screamVibrateSpeed="1" constantHeight="0" constantMoveX="0" constantRotation="0" constantScaleX="1" constantScaleY="1" restartAnimsOnVisible="false" idlePath="Ghost/F BrowRight.png" talkPath="" blinkPath="" talkBlinkPath="" screamPath="" syncAnims="false" smoothTalkTint="false" scaleX="1" scaleY="1" posX="120.4" posY="-270.89996" rot="0" pivotX="0.67199999" pivotY="0.11300001" rotateChildren="false" motionParent="d544c7d7-ee25-40f6-93d9-97f79ecd2016" motionDelayTime="0" hideWithParent="true" motionDrag="0" motionSpring="0" distanceLimit="-1" rotationEffect="0" inheritTint="false" allowIndividualMotion="false" rotationIgnorePivots="false" motionStretch="0" stretchStrengthX="1" stretchStrengthY="1" stretchMinX="0.5" stretchMinY="0.5" stretchMaxX="2" stretchMaxY="2" weightPosX="0" weightPosY="1" trackingEnabled="false" trackingType="1" followElliptical="false" mouseNeutralX="-1" mouseNeutralY="-1" mouseAreaX="-1" mouseAreaY="-1" trackingAxis="0" trackingDeadzone="0" trackingSmooth="0.2" trackingLimitX="50" trackingLimitY="50" untrackedWhenHidden="true" mouseEffect="1" joypadEffect="1" trackingRotLimitX="0" trackingRotLimitY="0" pinLoaded="false" blendMode="Normal" scaleFilter="true" clipID="" isFolder="false" inFolder="7e953fe4-7f4e-44a1-af5c-cad573f45fa1">
+            <folderContent/>
+            <screamTint r="1" g="1" b="1" a="1"/>
+            <talkBlinkTint r="1" g="1" b="1" a="1"/>
+            <blinkTint r="1" g="1" b="1" a="1"/>
+            <talkTint r="1" g="1" b="1" a="1"/>
+            <idleTint r="1" g="1" b="1" a="1"/>
+            <breathTint r="1" g="1" b="1" a="1"/>
+            <layerColor r="0" g="0" b="0" a="0"/>
+        </layer>
+        <layer id="7dcb7fca-e3f8-403c-93f2-638ddd936b9f" name="F Brow Left" visible="true" talking="false" talkThreshold="0.15000001" smoothInput="false" smoothAmount="5" restartOnSwap="false" useBlink="false" talkBlink="false" blinkTime="6" blinkDur="0.2" blinkVar="4" bounceType="1" bounceHeight="80" bounceMoveX="0" bounceRotation="0" bounceScaleX="0" bounceScaleY="0" bounceTime="0.333" breathing="true" breathHeight="30" breathTime="4" breathMoveX="0" breathScaleX="0.1" breathScaleY="0.1" breathCircular="false" breatheWhileTalking="false" breathRotation="0" doBreathTint="false" screaming="false" screamThreshold="0.85000002" screamVibrate="true" screamVibrateAmount="5" screamVibrateSpeed="1" constantHeight="0" constantMoveX="0" constantRotation="0" constantScaleX="1" constantScaleY="1" restartAnimsOnVisible="false" idlePath="Ghost/F BrowLeft.png" talkPath="" blinkPath="" talkBlinkPath="" screamPath="" syncAnims="false" smoothTalkTint="false" scaleX="1" scaleY="1" posX="54.600002" posY="-287.70007" rot="0" pivotX="0.57800001" pivotY="0.088999994" rotateChildren="false" motionParent="d544c7d7-ee25-40f6-93d9-97f79ecd2016" motionDelayTime="0" hideWithParent="true" motionDrag="0" motionSpring="0" distanceLimit="-1" rotationEffect="0" inheritTint="false" allowIndividualMotion="false" rotationIgnorePivots="false" motionStretch="0" stretchStrengthX="1" stretchStrengthY="1" stretchMinX="0.5" stretchMinY="0.5" stretchMaxX="2" stretchMaxY="2" weightPosX="0" weightPosY="1" trackingEnabled="false" trackingType="1" followElliptical="false" mouseNeutralX="-1" mouseNeutralY="-1" mouseAreaX="-1" mouseAreaY="-1" trackingAxis="0" trackingDeadzone="0" trackingSmooth="0.2" trackingLimitX="50" trackingLimitY="50" untrackedWhenHidden="true" mouseEffect="1" joypadEffect="1" trackingRotLimitX="0" trackingRotLimitY="0" pinLoaded="false" blendMode="Normal" scaleFilter="true" clipID="" isFolder="false" inFolder="7e953fe4-7f4e-44a1-af5c-cad573f45fa1">
+            <folderContent/>
+            <screamTint r="1" g="1" b="1" a="1"/>
+            <talkBlinkTint r="1" g="1" b="1" a="1"/>
+            <blinkTint r="1" g="1" b="1" a="1"/>
+            <talkTint r="1" g="1" b="1" a="1"/>
+            <idleTint r="1" g="1" b="1" a="1"/>
+            <breathTint r="1" g="1" b="1" a="1"/>
+            <layerColor r="0" g="0" b="0" a="0"/>
+        </layer>
+        <layer id="76f68baa-56eb-410c-9b9c-989a9f5e2e4b" name="F Eyes" visible="true" talking="false" talkThreshold="0.15000001" smoothInput="false" smoothAmount="5" restartOnSwap="false" useBlink="true" talkBlink="false" blinkTime="6" blinkDur="0.2" blinkVar="4" bounceType="1" bounceHeight="80" bounceMoveX="0" bounceRotation="0" bounceScaleX="0" bounceScaleY="0" bounceTime="0.333" breathing="true" breathHeight="30" breathTime="4" breathMoveX="0" breathScaleX="0.1" breathScaleY="0.1" breathCircular="false" breatheWhileTalking="false" breathRotation="0" doBreathTint="false" screaming="false" screamThreshold="0.85000002" screamVibrate="true" screamVibrateAmount="5" screamVibrateSpeed="1" constantHeight="0" constantMoveX="0" constantRotation="0" constantScaleX="1" constantScaleY="1" restartAnimsOnVisible="false" idlePath="Ghost/F Eyes.png" talkPath="../../../Pictures/Commissions/!Premade/Ghost/Ghost PNGTuber Model/Parts/FEyesClosed.png" blinkPath="Ghost/F EyesClosed.png" talkBlinkPath="" screamPath="" syncAnims="false" smoothTalkTint="false" scaleX="1" scaleY="1" posX="54.600006" posY="-173.59996" rot="0" pivotX="0.57800001" pivotY="0.252" rotateChildren="false" motionParent="d544c7d7-ee25-40f6-93d9-97f79ecd2016" motionDelayTime="0" hideWithParent="true" motionDrag="0" motionSpring="0" distanceLimit="-1" rotationEffect="0" inheritTint="false" allowIndividualMotion="false" rotationIgnorePivots="false" motionStretch="0" stretchStrengthX="1" stretchStrengthY="1" stretchMinX="0.5" stretchMinY="0.5" stretchMaxX="2" stretchMaxY="2" weightPosX="0" weightPosY="1" trackingEnabled="false" trackingType="1" followElliptical="false" mouseNeutralX="-1" mouseNeutralY="-1" mouseAreaX="-1" mouseAreaY="-1" trackingAxis="0" trackingDeadzone="0" trackingSmooth="0.2" trackingLimitX="50" trackingLimitY="50" untrackedWhenHidden="true" mouseEffect="1" joypadEffect="1" trackingRotLimitX="0" trackingRotLimitY="0" pinLoaded="false" blendMode="Normal" scaleFilter="true" clipID="" isFolder="false" inFolder="7e953fe4-7f4e-44a1-af5c-cad573f45fa1">
+            <folderContent/>
+            <screamTint r="1" g="1" b="1" a="1"/>
+            <talkBlinkTint r="1" g="1" b="1" a="1"/>
+            <blinkTint r="1" g="1" b="1" a="1"/>
+            <talkTint r="1" g="1" b="1" a="1"/>
+            <idleTint r="1" g="1" b="1" a="1"/>
+            <breathTint r="1" g="1" b="1" a="1"/>
+            <layerColor r="0" g="0" b="0" a="0"/>
+        </layer>
+        <layer id="cf5eb208-e046-4498-af7f-3e38e95f8642" name="F Mouth" visible="true" talking="true" talkThreshold="0.15000001" smoothInput="false" smoothAmount="5" restartOnSwap="false" useBlink="false" talkBlink="false" blinkTime="6" blinkDur="0.2" blinkVar="4" bounceType="3" bounceHeight="0" bounceMoveX="0" bounceRotation="0" bounceScaleX="0" bounceScaleY="0" bounceTime="0.333" breathing="true" breathHeight="8.9499998" breathTime="0.16" breathMoveX="0" breathScaleX="0" breathScaleY="0" breathCircular="false" breatheWhileTalking="false" breathRotation="0" doBreathTint="false" screaming="false" screamThreshold="0.85000002" screamVibrate="true" screamVibrateAmount="5" screamVibrateSpeed="1" constantHeight="0" constantMoveX="0" constantRotation="0" constantScaleX="1" constantScaleY="1" restartAnimsOnVisible="false" idlePath="Ghost/F MouthClosed.png" talkPath="Ghost/F MouthOpen.png" blinkPath="" talkBlinkPath="" screamPath="" syncAnims="false" smoothTalkTint="false" scaleX="1" scaleY="1" posX="32.899994" posY="-86.800003" rot="0" pivotX="0.54699999" pivotY="0.37599999" rotateChildren="false" motionParent="d544c7d7-ee25-40f6-93d9-97f79ecd2016" motionDelayTime="0" hideWithParent="true" motionDrag="0" motionSpring="0" distanceLimit="-1" rotationEffect="0" inheritTint="false" allowIndividualMotion="true" rotationIgnorePivots="false" motionStretch="0" stretchStrengthX="1" stretchStrengthY="1" stretchMinX="0.5" stretchMinY="0.5" stretchMaxX="2" stretchMaxY="2" weightPosX="0" weightPosY="1" trackingEnabled="false" trackingType="1" followElliptical="false" mouseNeutralX="-1" mouseNeutralY="-1" mouseAreaX="-1" mouseAreaY="-1" trackingAxis="0" trackingDeadzone="0" trackingSmooth="0.2" trackingLimitX="50" trackingLimitY="50" untrackedWhenHidden="true" mouseEffect="1" joypadEffect="1" trackingRotLimitX="0" trackingRotLimitY="0" pinLoaded="false" blendMode="Normal" scaleFilter="true" clipID="" isFolder="false" inFolder="7e953fe4-7f4e-44a1-af5c-cad573f45fa1">
+            <folderContent/>
+            <screamTint r="1" g="1" b="1" a="1"/>
+            <talkBlinkTint r="1" g="1" b="1" a="1"/>
+            <blinkTint r="1" g="1" b="1" a="1"/>
+            <talkTint r="1" g="1" b="1" a="1"/>
+            <idleTint r="1" g="1" b="1" a="1"/>
+            <breathTint r="1" g="1" b="1" a="1"/>
+            <layerColor r="0" g="0" b="0" a="0"/>
+        </layer>
+        <layer id="77f5d3a3-7a3c-44ec-b698-e5af5dddc1a6" name="F Body" visible="true" talking="false" talkThreshold="0.15000001" smoothInput="false" smoothAmount="5" restartOnSwap="false" useBlink="false" talkBlink="false" blinkTime="6" blinkDur="0.2" blinkVar="4" bounceType="0" bounceHeight="80" bounceMoveX="0" bounceRotation="0" bounceScaleX="0" bounceScaleY="0" bounceTime="0.333" breathing="true" breathHeight="0" breathTime="0.16" breathMoveX="-26.32" breathScaleX="0" breathScaleY="0" breathCircular="false" breatheWhileTalking="false" breathRotation="0" doBreathTint="false" screaming="false" screamThreshold="0.85000002" screamVibrate="true" screamVibrateAmount="5" screamVibrateSpeed="1" constantHeight="0" constantMoveX="0" constantRotation="0" constantScaleX="1" constantScaleY="1" restartAnimsOnVisible="false" idlePath="Ghost/F Body.png" talkPath="" blinkPath="" talkBlinkPath="" screamPath="" syncAnims="false" smoothTalkTint="false" scaleX="1" scaleY="1" posX="0" posY="0" rot="0" pivotX="0.5" pivotY="0.5" rotateChildren="false" motionParent="" motionDelayTime="0" hideWithParent="true" motionDrag="0" motionSpring="0" distanceLimit="-1" rotationEffect="0" inheritTint="false" allowIndividualMotion="false" rotationIgnorePivots="false" motionStretch="0" stretchStrengthX="1" stretchStrengthY="1" stretchMinX="0.5" stretchMinY="0.5" stretchMaxX="2" stretchMaxY="2" weightPosX="0" weightPosY="1" trackingEnabled="true" trackingType="1" followElliptical="false" mouseNeutralX="800" mouseNeutralY="450" mouseAreaX="800" mouseAreaY="450" trackingAxis="0" trackingDeadzone="0" trackingSmooth="0.2" trackingLimitX="50" trackingLimitY="50" untrackedWhenHidden="false" mouseEffect="1" joypadEffect="1" trackingRotLimitX="10" trackingRotLimitY="0" pinLoaded="false" blendMode="Normal" scaleFilter="true" clipID="" isFolder="false" inFolder="7e953fe4-7f4e-44a1-af5c-cad573f45fa1">
+            <folderContent/>
+            <screamTint r="1" g="1" b="1" a="1"/>
+            <talkBlinkTint r="1" g="1" b="1" a="1"/>
+            <blinkTint r="1" g="1" b="1" a="1"/>
+            <talkTint r="1" g="1" b="1" a="1"/>
+            <idleTint r="1" g="1" b="1" a="1"/>
+            <breathTint r="1" g="1" b="1" a="1"/>
+            <layerColor r="0" g="0" b="0" a="0"/>
+        </layer>
+    </layers>
+</Config>
