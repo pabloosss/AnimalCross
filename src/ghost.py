@@ -1,6 +1,5 @@
 """User-owned PNGTuber ZIP importer. Artwork is never bundled or uploaded."""
 import math
-import time
 import tkinter as tk
 from pathlib import Path
 from zipfile import ZipFile

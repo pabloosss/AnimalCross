@@ -24,3 +24,7 @@
 ## Stan przydatności
 
 Materiały wystarczają do prototypu mapy z poruszającymi się NPC i dymkami. Paczki mieszają pixel art z rysunkową grafiką. Nie potwierdzono kompletu animacji pracy przy biurku, czytania i pisania. Nie dodawano ani nie przerabiano samych ilustracji podczas porządkowania.
+
+## Oczyszczenie paczek
+
+Usunięto źródła AI/EPS, projekty SCML, części do rigowania postaci, konfiguracje zewnętrznych programów PNGTuber i eksporty RPG Maker. Pozostały gotowe PNG, sekwencje, spritesheety oraz pliki autorów i licencji. Do modyfikacji źródeł należy sięgnąć do oryginalnej paczki lub historii repozytorium.

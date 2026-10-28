@@ -44,3 +44,5 @@ Na Windows: **Testuj.bat**.
 Z terminala w głównym folderze: `PYTHONPATH=src python -m unittest discover -s tests -v` (Linux/macOS).
 
 Testy jednostkowe używają atrap usług i procesów. Rzeczywista obsługa Windows, AMD i generowanie przez Wan wymagają testów na komputerze użytkownika.
+
+Po oczyszczeniu repozytorium zachowano gotowe grafiki i animacje dla aplikacji i przyszłej wioski. Pliki projektowe innych edytorów i eksporty innych silników usunięto z bieżącej wersji; historia Git pozostaje zachowana. Rozmiar pełnego klonu może więc nie zmaleć tak jak rozmiar nowego archiwum ZIP.

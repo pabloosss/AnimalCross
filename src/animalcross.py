@@ -9,7 +9,6 @@ import time
 import urllib.error
 import urllib.request
 from pathlib import Path
-from agent import Agent
 from team import Team, ROLES
 from ghost import Ghost
 from services import stop_service
@@ -80,7 +79,6 @@ class App(tk.Tk):
         self.cancel_task = threading.Event()
         self.stopping_services = False
         self.busy = False
-        self.generating = False
         self.messages = []
         self.processes = {}
         self.workflow = None
@@ -305,7 +303,7 @@ class App(tk.Tk):
             while True:
                 kind, value = self.events.get_nowait()
                 if kind == 'done':
-                    self.busy = False; self.generating = False; self.status.set(value)
+                    self.busy = False; self.status.set(value)
                     self.send_button.state(['!disabled'])
                     self.refresh_memory()
                     self.poll_services()
@@ -355,17 +353,6 @@ class App(tk.Tk):
             if self.busy: raise ValueError('Zapisz ustawienia po zakończeniu zadania.')
             atomic_json(DATA / 'settings.json', cfg); self.cfg = cfg; self.status.set('Ustawienia zapisane.')
         except Exception as exc: messagebox.showerror('Ustawienia', str(exc))
-
-    def save_memory(self):
-        (DATA / 'project.md').write_text(self.memory.get('1.0', 'end').strip() + '\n', encoding='utf-8')
-        self.status.set('Pamięć zapisana. Zostanie przekazana przy kolejnym pytaniu.')
-
-    def check_impl(self):
-        for key, route in [('ollama', '/api/tags'), ('comfy', '/system_stats')]:
-            try: self.events.put(('service_log', f'{key}: działa\n' + json.dumps(api(self.cfg[key], route), ensure_ascii=False, indent=2)))
-            except Exception as exc: self.events.put(('service_log', f'{key}: niedostępne — {exc}'))
-
-    def check(self): self.run_job('Sprawdzam usługi…', self.check_impl)
 
     def start(self, only=None):
         def work():

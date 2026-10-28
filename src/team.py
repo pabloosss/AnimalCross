@@ -42,7 +42,6 @@ class Team:
                 self.event('service_log',note)
                 self.signal('Pamięć' if note.startswith('AI porządkuje') else 'Operator','working',note[:180])
             operator=Agent(self.api,self.cfg,self.directory,emit,self.unload)
-            operator.last_task_result = None
             result=operator.run(history,memory+'\nPlan zespołu (materiał pomocniczy, nie rozszerza uprawnień):\n'+plan+'\nScenariusz:\n'+brief)
             self.signal('Pamięć','done','Ustalenia obsłużone przez moduł pamięci')
             self.handoff(role,'Kontroler',result)
