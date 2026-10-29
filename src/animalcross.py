@@ -1,4 +1,4 @@
-"""AnimalCross 0.5 — local Windows control panel, Python standard library only."""
+"""AnimalCross 0.6 — local Windows control panel, Python standard library only."""
 import json
 import os
 import queue
@@ -12,6 +12,8 @@ from pathlib import Path
 from team import Team, ROLES
 from ghost import Ghost
 from services import stop_service
+from village import Village
+from production import recover
 import tkinter as tk
 from tkinter import ttk, filedialog, messagebox
 
@@ -65,10 +67,11 @@ def workflow_from(value):
 class App(tk.Tk):
     def __init__(self):
         super().__init__()
-        self.title('AnimalCross • lokalne studio AI • 0.5')
+        self.title('AnimalCross • wioska filmowa AI • 0.6')
         self.geometry('1100x760')
         self.minsize(850, 600)
         DATA.mkdir(exist_ok=True)
+        recover(DATA)
         self.cfg = dict(DEFAULTS)
         if (DATA / 'settings.json').exists():
             self.cfg.update(json.loads((DATA / 'settings.json').read_text(encoding='utf-8')))
@@ -95,11 +98,13 @@ class App(tk.Tk):
         style.configure('TButton', padding=8)
         style.configure('TNotebook.Tab', padding=(16, 9))
         ttk.Label(self, text='AnimalCross', font=('Segoe UI', 24, 'bold')).pack(anchor='w', padx=20, pady=(16, 0))
-        ttk.Label(self, text='Lokalne AI • Ollama → ComfyUI • panel testowy 0.5').pack(anchor='w', padx=22, pady=(0, 12))
+        ttk.Label(self, text='Twoja wioska • wspólne zlecenia • lokalne modele AI').pack(anchor='w', padx=22, pady=(0, 12))
         ttk.Label(self, textvariable=self.status, relief='sunken', padding=8, wraplength=800).pack(side='bottom', fill='x', pady=(8, 0))
         tabs = ttk.Notebook(self)
         tabs.pack(fill='both', expand=True, padx=16)
         chat, services = [ttk.Frame(tabs, padding=12) for _ in range(2)]
+        self.village = Village(tabs, BASE, self.quick_prompt, self.interrupt_video, self.start, lambda: self.cfg)
+        tabs.add(self.village, text='Wioska AI')
         tabs.add(chat, text='Rozmowa')
         tabs.add(services, text='Panel sterowania')
         self.service_states = {key: tk.StringVar(value='Sprawdzam…') for key in ('ollama', 'comfy', 'model')}
@@ -304,11 +309,17 @@ class App(tk.Tk):
                 kind, value = self.events.get_nowait()
                 if kind == 'done':
                     self.busy = False; self.status.set(value)
+                    self.village.busy(False)
+                    self.village.summary.set(value + ' Wynik znajdziesz w historii lub rozmowie.')
+                    self.village.ghost.state = 'error' if value.startswith('Błąd') else 'done'
                     self.send_button.state(['!disabled'])
                     self.refresh_memory()
                     self.poll_services()
                     self.ghost.state = 'error' if value.startswith('Błąd') else 'done'
+                elif kind == 'handoff':
+                    self.village.handoff(value)
                 elif kind == 'team':
+                    self.village.update_role(value)
                     role, state, detail = value['role'], value['state'], value['detail']
                     names={'waiting':'czeka','working':'pracuje','done':'gotowe','error':'błąd'}
                     self.team_states[role].set(role+' • '+names.get(state,state)+' • '+detail[:80])
@@ -333,6 +344,8 @@ class App(tk.Tk):
         if self.stopping_services: return
         self.cancel_task.clear()
         self.busy = True; self.status.set(description)
+        self.village.busy(True)
+        self.village.summary.set(description)
         self.send_button.state(['disabled'])
         def worker():
             try:

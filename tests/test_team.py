@@ -17,8 +17,12 @@ class TeamTests(unittest.TestCase):
             with patch.object(team,'ask',side_effect=['Plan','Nie wymaga scenariusza','Potwierdzono odczyt']), patch('team.Agent',Operator):
                 result=team.run([{'role':'user','content':'sprawdź modele'}],'')
             messages=[json.loads(x) for x in (Path(root)/'agent_messages.jsonl').read_text().splitlines()]
-            self.assertEqual([(m['from'],m['to']) for m in messages],[('Koordynator','Scenarzysta'),('Scenarzysta','Operator'),('Operator','Kontroler'),('Kontroler','Koordynator')])
+            self.assertEqual([(m['from'],m['to']) for m in messages if m['from'] != 'Technik'],[('Koordynator','Scenarzysta'),('Scenarzysta','Operator'),('Operator','Kontroler'),('Kontroler','Koordynator')])
             self.assertEqual(len(set(m['task'] for m in messages)),1)
+            self.assertTrue(any(m['from']=='Technik' and m['to']=='Operator' for m in messages))
+            saved=json.loads(next((Path(root)/'productions').glob('*.json')).read_text())
+            self.assertEqual(saved['state'], 'done')
+            self.assertEqual(saved['result'], result)
             self.assertIn('Potwierdzono',result)
 
     def test_failure_is_visible_and_does_not_run_later_roles(self):

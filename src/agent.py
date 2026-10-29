@@ -84,12 +84,17 @@ class Agent:
                 if item:
                     status = item.get('status', {})
                     if status.get('completed') or status.get('status_str') == 'error':
+                        evidence = {'id': ident, 'status': status, 'outputs': item.get('outputs'), 'visual_review': 'Nie wykonano oceny obrazu.'}
+                        folder = self.directory / 'renders'
+                        folder.mkdir(exist_ok=True)
+                        # Local timestamp filename: never use a remote identifier as a path.
+                        (folder / (str(time.time_ns()) + '.json')).write_text(json.dumps(evidence, ensure_ascii=False, indent=2), encoding='utf-8')
                         self.remember('Wynik zadania '+ident+': '+json.dumps(status, ensure_ascii=False)[:2000])
                         queue = self.comfy('/queue')
                         if queue.get('queue_running') or queue.get('queue_pending'):
                             raise RuntimeError('Inne zadanie zajęło kolejkę. Wstrzymano powrót AI, aby nie ładować Qwena podczas generowania.')
                         self.comfy('/free', {'unload_models': True, 'free_memory': True})
-                        return {'id': ident, 'status': status, 'outputs': item.get('outputs'), 'visual_review': 'Nie wykonano oceny obrazu.'}
+                        return evidence
                 time.sleep(2)
             raise TimeoutError('Minęła godzina. Generowanie może nadal działać; sprawdź ComfyUI.')
         raise ValueError('Nieznane narzędzie: '+name)
