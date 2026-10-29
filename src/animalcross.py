@@ -67,7 +67,7 @@ def workflow_from(value):
 class App(tk.Tk):
     def __init__(self):
         super().__init__()
-        self.title('AnimalCross • wioska filmowa AI • 0.6')
+        self.title('AnimalCross • wioska filmowa AI • 0.7')
         self.geometry('1100x760')
         self.minsize(850, 600)
         DATA.mkdir(exist_ok=True)
@@ -82,6 +82,8 @@ class App(tk.Tk):
         self.cancel_task = threading.Event()
         self.stopping_services = False
         self.busy = False
+        self.continuous_enabled = False
+        self.continuous_count = 0
         self.messages = []
         self.processes = {}
         self.workflow = None
@@ -103,7 +105,7 @@ class App(tk.Tk):
         tabs = ttk.Notebook(self)
         tabs.pack(fill='both', expand=True, padx=16)
         chat, services = [ttk.Frame(tabs, padding=12) for _ in range(2)]
-        self.village = Village(tabs, BASE, self.quick_prompt, self.interrupt_video, self.start, lambda: self.cfg)
+        self.village = Village(tabs, BASE, self.quick_prompt, self.interrupt_video, self.start, lambda: self.cfg, self.set_continuous)
         tabs.add(self.village, text='Wioska AI')
         tabs.add(chat, text='Rozmowa')
         tabs.add(services, text='Panel sterowania')
@@ -189,10 +191,36 @@ class App(tk.Tk):
         ttk.Button(settings, text='Zapisz ustawienia', command=self.save_settings).pack(anchor='w', pady=12)
         ttk.Label(settings, text='Limit GPU 80%: jeszcze niewdrożony. Ten panel nie zmienia sterownika AMD.\nCzat i generowanie działają kolejno. Zamknij Cline, by nie ładował Qwena podczas pracy Wan.').pack(anchor='w')
         self.after(100, self.pump)
+        self.after(1000, self.continuous_tick)
         self.checking_services = False
         self.after(500, self.poll_services)
         self.after(15000, self.periodic_services)
         self.protocol('WM_DELETE_WINDOW', self.close)
+
+    def set_continuous(self, enabled):
+        self.continuous_enabled = enabled
+        self.village.log('System', 'Stała praca AI włączona: kolejne pomysły i scenariusze.' if enabled else 'Wyłączono nowe zlecenia. Bieżące zadanie może dokończyć pracę.')
+        self.village.mode.set('STAŁA PRACA AI · pomysły i scenariusze' if enabled else 'TRYB RZECZYWISTY · zlecenia ręczne')
+
+    def continuous_tick(self):
+        if self.continuous_enabled and not self.busy and not self.stopping_services:
+            self.continuous_count += 1
+            number = self.continuous_count
+            request = ('Zadanie ciągłe nr '+str(number)+': przygotuj jeden nowy pomysł i konkretny scenariusz zabawnego filmu AnimalCross z kotem lub psem. '
+                       'Klip 4–6 sekund, pion 9:16, jedna czytelna akcja, bez lektora. Unikaj powtarzania pomysłów zapisanych w pamięci. '
+                       'Sprawdź środowisko. Zapisz krótki opis zaproponowanego pomysłu do pamięci jako propozycję, nie wykonany film. '
+                       'Nie uruchamiaj generowania i nie publikuj.')
+            memory = (DATA / 'project.md').read_text(encoding='utf-8')
+            def work():
+                q = self.task_api(self.cfg['comfy'], '/queue', timeout=5)
+                if q.get('queue_running') or q.get('queue_pending'):
+                    raise RuntimeError('ComfyUI zajęte. Stała praca wstrzymana, aby nie ładować Qwena obok Wan.')
+                team = Team(self.task_api, dict(self.cfg), DATA, lambda k, v: self.events.put((k, v)), self.unload_impl)
+                result = team.run([{'role': 'user', 'content': request}], memory)
+                self.events.put(('chat', 'Stała praca AI #'+str(number)+': '+result))
+            self.village.log('Kolejka', 'Rozpoczynam zadanie ciągłe #'+str(number))
+            self.run_job('Stała praca AI • zadanie '+str(number), work)
+        self.after(10000, self.continuous_tick)
 
     def task_api(self, *args, **kwargs):
         if self.cancel_task.is_set(): raise RuntimeError('Zadanie zatrzymane przez użytkownika.')
@@ -201,6 +229,8 @@ class App(tk.Tk):
         return result
 
     def stop_selected(self, kind):
+        self.village.auto.set(False)
+        self.set_continuous(False)
         if self.stopping_services: return
         self.stopping_services = True
         self.cancel_task.set()
@@ -221,6 +251,9 @@ class App(tk.Tk):
         threading.Thread(target=work,daemon=True).start()
 
     def interrupt_video(self):
+        self.village.auto.set(False)
+        self.set_continuous(False)
+        self.village.stop_demo()
         self.cancel_task.set()
         def work():
             try:
@@ -310,6 +343,10 @@ class App(tk.Tk):
                 if kind == 'done':
                     self.busy = False; self.status.set(value)
                     self.village.busy(False)
+                    self.village.log('System', value)
+                    if value.startswith('Błąd') and self.continuous_enabled:
+                        self.village.auto.set(False)
+                        self.set_continuous(False)
                     self.village.summary.set(value + ' Wynik znajdziesz w historii lub rozmowie.')
                     self.village.ghost.state = 'error' if value.startswith('Błąd') else 'done'
                     self.send_button.state(['!disabled'])
